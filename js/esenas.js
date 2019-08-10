@@ -19,11 +19,14 @@ var config = {
 var player;
 var stars;
  var cursors;
+ var playing = false;
+var startButton;
 
 var game = new Phaser.Game(config);
 
+//aqui estan las imagenes .
 function preload() {
-this.load.image('sky','assets/animado.jpg');
+this.load.image('sky','assets/Palabrados.png');
 this.load.image('comienzo','assets/comienzo.png');
 this.load.image('ground', 'assets/platform.png');
 this.load.image('star' , 'assets/star.png');
@@ -31,51 +34,28 @@ this.load.image('bomb', 'assets/bomb.png');
 this.load.spritesheet(
   'dude',
   'assets/dude.png',
-  { frameWidth: 12, frameHeight: 38}
+  { frameWidth: 15, frameHeight: 40}
 );
 }
 
+//sirve para hacer mas grande las imagenes.
 function create(){
-this.add.image(400, 300, 'sky');
-this.add.image(200, 200, 'comienzo');
+const background = this.add.image(400, 300, 'sky');
+background.displayWidth = game.config.width;
+background.displayHeight = game.config.height;
 
-
-//createPlayer(this);
-
-//createAnimations(this);
+const play = this.add.image(400, 500, 'comienzo');
+play.displayWidth = 100;
+play.displayHeight = 80;
 
 cursors =  this.input.keyboard.createCursorKeys();
 
-stars = this.physics.add.group({
-  key: 'star',
-  repeat: 11,
-  setXY: { x: 12, y: 0, stepX: 70}
-});
-
-stars.children.iterate(function(child){
-child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-});
-
-//this.physics.add.collider(player, platforms);
-//this.physics.add.collider(stars, platforms);
-
-//this.physics.add.overlap(player, stars, collectStar, null, this);
 }
 
 function update(){
-if (cursors.left.isDown) {
-  player.setVelocityX(-160);
-  player.anims.play('left', true);
-}else if(cursors.right.isDown) {
-    player.setVelocityX(160);
-    player.anims.play('right', true);
-}else {
-  //player.setVelocityX(0);
-  // player.anims.play('turn', true);
+
 }
-if (cursors.up.isDown && player.body.touching.down) {
-    player.setVelocityY(-330);
-}
-}
+
+
 
 
