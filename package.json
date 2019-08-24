@@ -1,0 +1,23 @@
+{
+  "name": "moonlight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nazareth1203/moonlight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nazareth1203/moonlight/issues"
+  },
+  "homepage": "https://github.com/Nazareth1203/moonlight#readme",
+  "dependencies": {
+    "phaser": "^3.19.0"
+  }
+}
