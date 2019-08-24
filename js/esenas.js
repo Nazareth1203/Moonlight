@@ -1,7 +1,7 @@
 var config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: 805,
+  height: 605,
   physics:{
     default:'arcade',
     arcade:{
@@ -18,24 +18,17 @@ var config = {
 
 var player;
 var stars;
- var cursors;
- var playing = false;
-var startButton;
-
+var cursors;
 var game = new Phaser.Game(config);
 
 //aqui estan las imagenes .
 function preload() {
-this.load.image('sky','assets/Palabrados.png');
+this.load.image('sky','assets/dolar.jpg');
 this.load.image('comienzo','assets/comienzo.png');
 this.load.image('ground', 'assets/platform.png');
 this.load.image('star' , 'assets/star.png');
 this.load.image('bomb', 'assets/bomb.png');
-this.load.spritesheet(
-  'dude',
-  'assets/dude.png',
-  { frameWidth: 15, frameHeight: 40}
-);
+this.load.spritesheet('dude','assets/dude.png',{ frameWidth: 15, frameHeight: 40});
 }
 
 //sirve para hacer mas grande las imagenes.
@@ -55,7 +48,3 @@ cursors =  this.input.keyboard.createCursorKeys();
 function update(){
 
 }
-
-
-
-
