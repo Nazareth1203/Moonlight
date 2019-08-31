@@ -14,15 +14,13 @@ var config = {
     create: create,
     update: update,
   }
-};
+  };
 
-var game = new Phaser.Game(config);
+  var game = new Phaser.Game(config);
 
-//aqui estan las imagenes .
+  //aqui estan las imagenes .
 function preload() {
-this.load.image('sky','assets/Palabrados.png');
-this.load.image('comienzo','assets/play.png');
-this.load.image('bomb', 'assets/bomb.png');
+this.load.image('sky','assets/estrellado.jpg');
 this.load.spritesheet(
   'dude',
   'assets/dude.png',
@@ -30,23 +28,12 @@ this.load.spritesheet(
 );
 }
 
-//sirve para hacer mas grande las imagenes.
 function create(){
 const background = this.add.image(400, 300, 'sky');
 background.displayWidth = game.config.width;
 background.displayHeight = game.config.height;
 
-const play = this.add.image(400, 500, 'comienzo');
-play.displayWidth = 100;
-play.displayHeight = 80;
-
-
 cursors =  this.input.keyboard.createCursorKeys();
 
-}
-
-
-
-function update(){
 
 }
