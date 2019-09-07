@@ -41,6 +41,6 @@ class Levels extends Phaser.Scene {
     numberOne.displayWidth = 80;
     numberOne.displayHeight = 80;
     numberOne.setInteractive();
-    numberOne.once('pointerup', () => this.scene.start('Levels3'), this);
+    numberOne.once('pointerup', () => this.scene.start('space'), this);
   }
 }

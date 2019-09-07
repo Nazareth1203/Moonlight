@@ -1,6 +1,6 @@
 const config = {
   height: 600,
-  scene: [MainMenu, Levels],
+  scene: [MainMenu, Levels, Space],
   type: Phaser.AUTO,
   width: 800
 };
