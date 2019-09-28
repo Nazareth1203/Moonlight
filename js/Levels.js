@@ -8,6 +8,8 @@ class Levels extends Phaser.Scene {
     this.load.image('number-one','assets/levels/number-one.png');
     this.load.image('number-two','assets/levels/number-two.png');
     this.load.image('number-tree','assets/levels/number-tree.png');
+    this.load.image('number-four','assets/levels/number-four.png');
+    this.load.image('number-five','assets/levels/number-five.png');
   }
 
   create() {
@@ -53,10 +55,22 @@ class Levels extends Phaser.Scene {
     numbertwo.setInteractive();
     numbertwo.once('pointerup', () => this.scene.start('nevel'), this);
 
-        const numbertree = this.add.image(400, 150, 'number-tree');
+    const numbertree = this.add.image(400, 150, 'number-tree');
     numbertree.displayWidth = 80;
     numbertree.displayHeight = 80;
     numbertree.setInteractive();
     numbertree.once('pointerup', () => this.scene.start('nevel'), this);
+
+    const numberfour = this.add.image(165, 340, 'number-four');
+    numberfour.displayWidth = 80;
+    numberfour.displayHeight = 80;
+    numberfour.setInteractive();
+    numberfour.once('pointerup', () => this.scene.start('nevel'), this);
+
+    const numberfive = this.add.image(400, 350, 'number-five');
+    numberfive.displayWidth = 100;
+    numberfive.displayHeight = 100;
+    numberfive.setInteractive();
+    numberfive.once('pointerup', () => this.scene.start('nevel'), this);
   }
 }
