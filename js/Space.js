@@ -9,13 +9,23 @@ class Space extends Phaser.Scene {
   }
 
   create() {
-    const nave = this.add.image(400, 520, 'nave');
-    nave.displayWidth = 100;
-    nave.displayHeight = 145;
+    this.ship = this.physics.add.image(400, 520, 'nave');
+    this.ship.displayWidth = 100;
+    this.ship.displayHeight = 145;
+    this.ship.setCollideWorldBounds(true);
 
-    const bomba = this.add.image(100, 250, 'bomba');
-    // bomba.displayWidth = 50;
-    // bomba.displayHeight = 90;
+    this.add.image(100, 250, 'bomba');
+    
+    this.cursors = this.input.keyboard.createCursorKeys();
+  }
 
+  update() {
+    if (this.cursors.left.isDown) {
+      this.ship.setVelocityX(-200);
+    } else if (this.cursors.right.isDown) {
+      this.ship.setVelocityX(200);
+    } else {
+      this.ship.setVelocityX(0);
+    }
   }
 }
