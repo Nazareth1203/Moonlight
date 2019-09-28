@@ -6,6 +6,8 @@ class Levels extends Phaser.Scene {
   preload() {
     this.load.image('background','assets/levels/background.png');
     this.load.image('number-one','assets/levels/number-one.png');
+    //this.load.image('number-two','assets/levels/number-two.png');
+
   }
 
   create() {
@@ -42,5 +44,10 @@ class Levels extends Phaser.Scene {
     numberOne.displayHeight = 80;
     numberOne.setInteractive();
     numberOne.once('pointerup', () => this.scene.start('space'), this);
+
+    //const numberTwo = this.add.image(400, 530, 'number-two');
+    //numberOne.displayWidth = 80;
+    //numberOne.displayHeight = 80;
+    //numberOne.setInteractive();
   }
 }
