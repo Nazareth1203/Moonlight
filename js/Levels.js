@@ -6,8 +6,13 @@ class Levels extends Phaser.Scene {
   preload() {
     this.load.image('background','assets/levels/background.png');
     this.load.image('number-one','assets/levels/number-one.png');
+<<<<<<< HEAD
     //this.load.image('number-two','assets/levels/number-two.png');
 
+=======
+    this.load.image('number-two','assets/levels/number-two.png');
+    this.load.image('number-tree','assets/levels/number-tree.png');
+>>>>>>> d9590f5c843f093c82c4c73ce3146e073419862f
   }
 
   create() {
@@ -39,15 +44,31 @@ class Levels extends Phaser.Scene {
     graphics.fillStyle(color, alpha);
     graphics.fillCircle(165, 340, 40);
 
+    //number-one
     const numberOne = this.add.image(400, 530, 'number-one');
     numberOne.displayWidth = 80;
     numberOne.displayHeight = 80;
     numberOne.setInteractive();
     numberOne.once('pointerup', () => this.scene.start('space'), this);
 
+<<<<<<< HEAD
     //const numberTwo = this.add.image(400, 530, 'number-two');
     //numberOne.displayWidth = 80;
     //numberOne.displayHeight = 80;
     //numberOne.setInteractive();
+=======
+    //nunber-two
+    const numbertwo = this.add.image(625, 340, 'number-two');
+    numbertwo.displayWidth = 80;
+    numbertwo.displayHeight = 80;
+    numbertwo.setInteractive();
+    numbertwo.once('pointerup', () => this.scene.start('nevel'), this);
+
+        const numbertree = this.add.image(400, 150, 'number-tree');
+    numbertree.displayWidth = 80;
+    numbertree.displayHeight = 80;
+    numbertree.setInteractive();
+    numbertree.once('pointerup', () => this.scene.start('nevel'), this);
+>>>>>>> d9590f5c843f093c82c4c73ce3146e073419862f
   }
 }
