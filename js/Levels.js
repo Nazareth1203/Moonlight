@@ -61,7 +61,7 @@ class Levels extends Phaser.Scene {
     numbertree.setInteractive();
     numbertree.once('pointerup', () => this.scene.start('nevel'), this);
 
-    const numberfour = this.add.image(165, 340, 'number-four');
+    const numberfour = this.add.image(160, 340, 'number-four');
     numberfour.displayWidth = 80;
     numberfour.displayHeight = 80;
     numberfour.setInteractive();
