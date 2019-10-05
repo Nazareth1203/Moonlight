@@ -3,7 +3,7 @@ const config = {
   physics: {
     default: 'arcade'
   },
-  scene: [MainMenu, Levels, Space],
+  scene: [MainMenu, Levels, Space, ],
   type: Phaser.AUTO,
   width: 800
 };
