@@ -6,15 +6,6 @@ class Space extends Phaser.Scene {
   preload() {
     this.load.image('nave','assets/space/navenumber-one.png');
     this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
   }
 
   create() {
@@ -23,20 +14,9 @@ class Space extends Phaser.Scene {
     this.ship.displayHeight = 145;
     this.ship.setCollideWorldBounds(true);
 
-    this.add.image(100, 250, 'bomb');
-    this.add.image(150, 290, 'bomb');
-    this.add.image(200, 250, 'bomb');
-    this.add.image(250, 250, 'bomb');
-    this.add.image(300, 280, 'bomb');
-    this.add.image(350, 250, 'bomb');
-    this.add.image(400, 260, 'bomb');
-    this.add.image(450, 250, 'bomb');
-    this.add.image(500, 295, 'bomb');
-    this.add.image(550, 280, 'bomb');
-    this.add.image(600, 250, 'bomb');
-    this.add.image(650, 265, 'bomb');
-
-
+    this.bombs = this.add.group();
+    this.bombs.enableBody = true;
+    this.bombs.physicsBodyType = Phaser.Physics.ARCADE;
 
     this.cursors = this.input.keyboard.createCursorKeys();
   }
@@ -48,6 +28,23 @@ class Space extends Phaser.Scene {
       this.ship.setVelocityX(200);
     } else {
       this.ship.setVelocityX(0);
+    }
+
+    // Create random bombs
+    if (this.bombs.children.lenght < 25) {
+      const bomb = this.bombs.create((Math.random() * 650) + 50, 650, 'bomb');
+      bomb.body.velocity.y = -100;
+      bomb.anchor.set(.5);
+      bomb.width = 50;
+      bomb.height = 50;
+    }
+
+    for (let i = 0; i < this.bombs.children.lenght; i += 1) {
+      if (this.bombs.children[i].y < 10) {
+        const bomb = this.bombs.children[i];
+        bomb.y = 650;
+        bomb.x = (Math.random() * 650) + 50;
+      }
     }
   }
 }
