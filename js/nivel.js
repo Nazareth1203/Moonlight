@@ -1,6 +1,6 @@
-class Nevel extends Phaser.Scene {
+class Nivel extends Phaser.Scene {
     constructor() {
-        super({ key: 'nevel' });
+        super({ key: 'nivel' });
     }
 
     preload() {

@@ -33,12 +33,12 @@ class Levels extends Phaser.Scene {
     graphics.fillStyle(color, alpha);
     graphics.fillCircle(400, 530, 40);
 
-    // cuarto circulo:
+     cuarto circulo:
     graphics.fillStyle(color, alpha);
     graphics.fillCircle(625, 340, 40);
 
-    //quinto circulo:
-    graphics.fillStyle(color, alpha);
+  //  quinto circulo:
+   graphics.fillStyle(color, alpha);
     graphics.fillCircle(165, 340, 40);
 
     //number-one
@@ -59,18 +59,18 @@ class Levels extends Phaser.Scene {
     numbertree.displayWidth = 80;
     numbertree.displayHeight = 80;
     numbertree.setInteractive();
-    numbertree.once('pointerup', () => this.scene.start('nevel'), this);
+    numbertree.once('pointerup', () => this.scene.start('nivel'), this);
 
-    const numberfour = this.add.image(160, 340, 'number-four');
+  const numberfour = this.add.image(160, 340, 'number-four');
     numberfour.displayWidth = 80;
     numberfour.displayHeight = 80;
     numberfour.setInteractive();
-    numberfour.once('pointerup', () => this.scene.start('nevel'), this);
+    numberfour.once('pointerup', () => this.scene.start('nivel4'), this);
 
     const numberfive = this.add.image(400, 350, 'number-five');
     numberfive.displayWidth = 100;
     numberfive.displayHeight = 100;
     numberfive.setInteractive();
-    numberfive.once('pointerup', () => this.scene.start('nevel'), this);
+    numberfive.once('pointerup', () => this.scene.start('final'), this);
   }
 }
