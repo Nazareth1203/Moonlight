@@ -6,9 +6,15 @@ class Space extends Phaser.Scene {
   preload() {
     this.load.image('nave','assets/space/navenumber-one.png');
     this.load.image('bomb', 'assets/space/bomb.png');
+    this.load.image('fondo', 'assets/levels/fondo.jpg');
+
   }
 
   create() {
+    const fondo = this.add.image(400, 300, 'fondo');
+    background.displayWidth = this.game.config.width;
+    background.displayHeight = this.game.config.height;
+
     this.ship = this.physics.add.image(400, 520, 'nave');
     this.ship.displayWidth = 100;
     this.ship.displayHeight = 145;
@@ -19,6 +25,13 @@ class Space extends Phaser.Scene {
     this.bombs.physicsBodyType = Phaser.Physics.ARCADE;
 
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    //const atras = this.add.image(500, 460, 'atras');
+    //numbertree.displayWidth =90;
+    //numbertree.displayHeight = 90;
+    //numbertree.setInteractive();
+    //
+    //numbertree.once('pointerup', () => this.scene.start('levels'), this);
   }
 
   update() {

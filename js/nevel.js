@@ -4,13 +4,13 @@ class Nevel extends Phaser.Scene {
     }
 
     preload() {
-      this.load.image('nave','assets/space/navenumber-one.png');
+      this.load.image('nave','assets/levels/navesegunda.png');
     }
 
     create() {
       this.ship = this.physics.add.image(400, 520, 'nave');
-      this.ship.displayWidth = 100;
-      this.ship.displayHeight = 145;
+      this.ship.displayWidth = 120;
+      this.ship.displayHeight = 160;
       this.ship.setCollideWorldBounds(true);
 
       this.bombs = this.add.group();

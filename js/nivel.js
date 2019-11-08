@@ -4,13 +4,13 @@ class Nivel extends Phaser.Scene {
     }
 
     preload() {
-      this.load.image('nave','assets/space/navenumber-one.png');
+      this.load.image('nave','assets/levels/navertercera.png');
     }
 
     create() {
       this.ship = this.physics.add.image(400, 520, 'nave');
-      this.ship.displayWidth = 100;
-      this.ship.displayHeight = 145;
+      this.ship.displayWidth = 190;
+      this.ship.displayHeight = 180;
       this.ship.setCollideWorldBounds(true);
 
       this.bombs = this.add.group();
