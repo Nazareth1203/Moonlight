@@ -4,14 +4,13 @@ class Space extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('nave','assets/space/navenumber-one.png');
-    this.load.image('bomb', 'assets/space/bomb.png');
-    this.load.image('fondo', 'assets/levels/fondo.jpg');
-
+    this.load.image('nave1','assets/space/navenumber-one.png');
+    this.load.image('atras','assets/levels/haciatras.png');
   }
 
   create() {
-      this.ship = this.physics.add.image(400, 520, 'nave');
+
+    this.ship = this.physics.add.image(400, 520, 'nave1');
     this.ship.displayWidth = 100;
     this.ship.displayHeight = 145;
     this.ship.setCollideWorldBounds(true);
@@ -22,16 +21,12 @@ class Space extends Phaser.Scene {
 
     this.cursors = this.input.keyboard.createCursorKeys();
 
-    const fondo = this.add.image(400, 300, 'fondo');
-    fondo.displayWidth = this.game.config.width;
-    fondo.displayHeight = this.game.config.height;
-
-    //const atras = this.add.image(500, 460, 'atras');
-    //numbertree.displayWidth =90;
-    //numbertree.displayHeight = 90;
-    //numbertree.setInteractive();
-    //
-    //numbertree.once('pointerup', () => this.scene.start('levels'), this);
+    const numberOne = this.add.image(40, 45, 'atras');
+    numberOne.displayWidth = 150;
+    numberOne.displayHeight = 180;
+    numberOne.setInteractive();
+    numberOne.once('pointerup', () => this.scene.start('levels'), this);
+    
   }
 
   update() {

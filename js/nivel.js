@@ -4,11 +4,12 @@ class Nivel extends Phaser.Scene {
     }
 
     preload() {
-      this.load.image('nave','assets/levels/navertercera.png');
+      this.load.image('nave3','assets/levels/navertercera.png');
+      this.load.image('atras','assets/levels/haciatras.png');
     }
 
     create() {
-      this.ship = this.physics.add.image(400, 520, 'nave');
+      this.ship = this.physics.add.image(400, 520, 'nave3');
       this.ship.displayWidth = 190;
       this.ship.displayHeight = 180;
       this.ship.setCollideWorldBounds(true);
@@ -18,6 +19,13 @@ class Nivel extends Phaser.Scene {
       this.bombs.physicsBodyType = Phaser.Physics.ARCADE;
 
       this.cursors = this.input.keyboard.createCursorKeys();
+
+      const numberOne = this.add.image(40, 45, 'atras');
+      numberOne.displayWidth = 150;
+      numberOne.displayHeight = 180;
+      numberOne.setInteractive();
+      numberOne.once('pointerup', () => this.scene.start('levels'), this);
+
     }
 
     update() {
