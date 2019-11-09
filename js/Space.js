@@ -11,11 +11,7 @@ class Space extends Phaser.Scene {
   }
 
   create() {
-    const fondo = this.add.image(400, 300, 'fondo');
-    background.displayWidth = this.game.config.width;
-    background.displayHeight = this.game.config.height;
-
-    this.ship = this.physics.add.image(400, 520, 'nave');
+      this.ship = this.physics.add.image(400, 520, 'nave');
     this.ship.displayWidth = 100;
     this.ship.displayHeight = 145;
     this.ship.setCollideWorldBounds(true);
@@ -25,6 +21,10 @@ class Space extends Phaser.Scene {
     this.bombs.physicsBodyType = Phaser.Physics.ARCADE;
 
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    const fondo = this.add.image(400, 300, 'fondo');
+    fondo.displayWidth = this.game.config.width;
+    fondo.displayHeight = this.game.config.height;
 
     //const atras = this.add.image(500, 460, 'atras');
     //numbertree.displayWidth =90;
