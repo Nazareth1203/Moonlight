@@ -6,6 +6,8 @@ class Space extends Phaser.Scene {
   preload() {
     this.load.image('nave1','assets/space/navenumber-one.png');
     this.load.image('atras','assets/levels/haciatras.png');
+    //this.load.image('enemigo','assets/levels/enemigo.png');
+
   }
 
   create() {
@@ -22,11 +24,17 @@ class Space extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
 
     const numberOne = this.add.image(40, 45, 'atras');
-    numberOne.displayWidth = 150;
-    numberOne.displayHeight = 180;
+    numberOne.displayWidth = 160;
+    numberOne.displayHeight = 190;
     numberOne.setInteractive();
     numberOne.once('pointerup', () => this.scene.start('levels'), this);
-    
+
+    //this.ship = this.physics.add.image(410, 160, 'enemigo');
+    //this.ship.displayWidth = 300;
+    //this.ship.displayHeight = 200;
+    //this.ship.setCollideWorldBounds(true);
+
+
   }
 
   update() {
