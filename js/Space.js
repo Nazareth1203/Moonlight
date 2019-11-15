@@ -6,8 +6,6 @@ class Space extends Phaser.Scene {
   preload() {
     this.load.image('nave1','assets/space/navenumber-one.png');
     this.load.image('atras','assets/levels/haciatras.png');
-    //this.load.image('enemigo','assets/levels/enemigo.png');
-
   }
 
   create() {
@@ -28,11 +26,6 @@ class Space extends Phaser.Scene {
     numberOne.displayHeight = 190;
     numberOne.setInteractive();
     numberOne.once('pointerup', () => this.scene.start('levels'), this);
-
-    //this.ship = this.physics.add.image(410, 160, 'enemigo');
-    //this.ship.displayWidth = 300;
-    //this.ship.displayHeight = 200;
-    //this.ship.setCollideWorldBounds(true);
 
 
   }
